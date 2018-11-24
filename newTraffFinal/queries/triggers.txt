@@ -1,0 +1,9 @@
+CREATE TRIGGER `deleteroute` BEFORE DELETE ON `diversions`
+ FOR EACH ROW insert into routes VALUES(null,old.id,'deleted',now());
+
+
+CREATE TRIGGER `insertroute` AFTER INSERT ON `diversions`
+ FOR EACH ROW INSERT into routes VALUES(null,new.id,'inserted',now())
+
+CREATE TRIGGER `updateroute` AFTER UPDATE ON `diversions`
+ FOR EACH ROW INSERT into routes VALUES(null,new.id,'updated',now())

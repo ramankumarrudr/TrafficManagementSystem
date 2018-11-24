@@ -1,0 +1,49 @@
+CREATE TABLE `user_table` 
+( `idNo` INT(10) NOT NULL AUTO_INCREMENT , 
+`username` VARCHAR(255) NOT NULL , 
+`password` VARCHAR(255) NOT NULL ,
+ `vehicleNo` VARCHAR(255) NOT NULL ,
+ `travelArea` VARCHAR(255) NOT NULL , 
+`phoneNo` INT(10) NOT NULL , 
+PRIMARY KEY (`idNo`))
+
+
+CREATE TABLE `traff_table`
+ ( `area` VARCHAR(255) NOT NULL ,
+ `time` VARCHAR(255) NOT NULL , 
+`no_veh` INT(10) NOT NULL , 
+`traffic_level` VARCHAR(255) NOT NULL ,
+ PRIMARY KEY (`area`)) 
+
+
+CREATE TABLE `diversions`
+ ( `id` INT(11) NOT NULL AUTO_INCREMENT , 
+`area` VARCHAR(255) NOT NULL , `street1` VARCHAR(255) NOT NULL ,
+ `road_length_1` VARCHAR(255) NOT NULL , 
+`diversion1` VARCHAR(255) NOT NULL , `street2` VARCHAR(255) NOT NULL , 
+`road_length_2` VARCHAR(255) NOT NULL ,
+ `diversion2` VARCHAR(255) NOT NULL , `street2` VARCHAR(255) NOT NULL , 
+`road_length_3` VARCHAR(255) NOT NULL ,
+ `diversion3` VARCHAR(255) NOT NULL , PRIMARY KEY (`area`, `id`))
+
+CREATE TABLE `traff_polices` 
+( `id` INT(11) NOT NULL AUTO_INCREMENT ,
+ `police_id` VARCHAR(255) NOT NULL , 
+`police_name` VARCHAR(255) NOT NULL ,
+ `area` VARCHAR(255) NOT NULL , 
+`phoneno` VARCHAR(255) NOT NULL , 
+PRIMARY KEY (`police_id`, `id`)) 
+
+CREATE TABLE `veh_details`
+ ( `id` INT(11) NOT NULL AUTO_INCREMENT ,
+ `name` VARCHAR(255) NOT NULL ,
+ `no_veh` INT(10) NOT NULL , 
+`veh_type` VARCHAR(255) NOT NULL , 
+`veh_name` VARCHAR(255) NOT NULL , 
+PRIMARY KEY (`name`, `id`))
+
+CREATE TABLE `comment` 
+( `id` INT(11) NOT NULL AUTO_INCREMENT ,
+ `username` VARCHAR(255) NOT NULL , 
+`comment` VARCHAR(255) NOT NULL ,
+ PRIMARY KEY (`username`, `id`))
